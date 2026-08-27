@@ -1,7 +1,14 @@
 import styles from "@/app/page.module.css";
 import ScrollReveal from "./ScrollReveal";
 
-export default function StreamingSection({ videos }: { videos: any[] }) {
+interface VideoItem {
+  title: string;
+  description: string;
+  videoId: string;
+  thumbnail: string;
+}
+
+export default function StreamingSection({ videos }: { videos: VideoItem[] }) {
   if (!videos || videos.length === 0) return null;
 
   return (
@@ -34,9 +41,10 @@ export default function StreamingSection({ videos }: { videos: any[] }) {
           <div className={styles.nowWatching}>
             <h3 className={styles.listTitle}>Up Next</h3>
             <div className={styles.sideList}>
-              {videos.slice(1, 4).map((video: any, i: number) => (
+              {videos.slice(1, 4).map((video: VideoItem, i: number) => (
                 <a key={i} href={`https://www.youtube.com/watch?v=${video.videoId}`} target="_blank" rel="noreferrer" className={styles.sideCard}>
                   <div className={styles.sideThumb}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={video.thumbnail || `https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`} alt={video.title} />
                     <div className={styles.sidePlayIcon}><svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
                   </div>
@@ -54,9 +62,10 @@ export default function StreamingSection({ videos }: { videos: any[] }) {
         <div className={styles.videoRowContainer}>
           <h3 className={styles.rowTitle}>Trending Stories</h3>
           <div className={styles.videoRow}>
-            {videos.slice(4).map((video: any, i: number) => (
+            {videos.slice(4).map((video: VideoItem, i: number) => (
               <a key={i} href={`https://www.youtube.com/watch?v=${video.videoId}`} target="_blank" rel="noreferrer" className={styles.posterCard}>
                 <div className={styles.posterThumb}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={video.thumbnail || `https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`} alt={video.title} />
                   <div className={styles.posterOverlay}>
                     <svg width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>

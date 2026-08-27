@@ -15,7 +15,7 @@ export default function AcademySection() {
             <div className={styles.contactLeft}>
               <h3 className={styles.contactTitle}>Apply for the <br/>Next Batch</h3>
               <p className={styles.contactSubtitle}>
-                Ready to bring your own nightmares to life? Join the Bhoy Bangla Animation Academy and learn from the creators behind Bengal's most chilling animated tales.
+                Ready to bring your own nightmares to life? Join the Bhoy Bangla Animation Academy and learn from the creators behind Bengal&apos;s most chilling animated tales.
               </p>
               
               <div className={styles.contactProfile}>

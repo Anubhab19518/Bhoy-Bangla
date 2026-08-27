@@ -17,7 +17,7 @@ export default function HeroSection() {
       <ScrollReveal>
         <div className={styles.heroContent}>
           <h1 className={styles.title}>
-            Bengal's <span className={styles.textRed}>Darkest</span> <br/> 
+            Bengal&apos;s <span className={styles.textRed}>Darkest</span> <br/> 
             Animated <span className={styles.textRed}>Nightmares.</span>
           </h1>
           <p className={styles.subtitle}>

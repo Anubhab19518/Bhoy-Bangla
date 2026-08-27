@@ -7,11 +7,22 @@ export default function FooterReveal({ children }: { children: ReactNode }) {
   const spacerRef = useRef<HTMLDivElement>(null);
   const footerRef = useRef<HTMLDivElement>(null);
   const [footerHeight, setFooterHeight] = useState(0);
+  const [isRevealEnabled, setIsRevealEnabled] = useState(true);
 
   useEffect(() => {
     const updateHeight = () => {
       if (footerRef.current) {
-        setFooterHeight(footerRef.current.offsetHeight);
+        const h = footerRef.current.offsetHeight;
+        setFooterHeight(h);
+        
+        // If the footer is taller than the viewport, pinning it to the bottom 
+        // means the top will be permanently cut off and unreachable!
+        // We disable the parallax reveal effect on mobile/tall footers.
+        if (h > window.innerHeight * 0.9 || window.innerWidth < 900) {
+          setIsRevealEnabled(false);
+        } else {
+          setIsRevealEnabled(true);
+        }
       }
     };
     
@@ -33,10 +44,17 @@ export default function FooterReveal({ children }: { children: ReactNode }) {
     offset: ["start end", "end end"]
   });
 
-  // Overlay fades from solid background (1) to transparent (0)
   const overlayOpacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
-  // Slide up slightly for a nice parallax effect
   const y = useTransform(scrollYProgress, [0, 1], [50, 0]);
+
+  // If disabled, just render the footer normally in the document flow
+  if (!isRevealEnabled) {
+    return (
+      <div ref={footerRef} style={{ position: "relative", zIndex: 0 }}>
+        {children}
+      </div>
+    );
+  }
 
   return (
     <>

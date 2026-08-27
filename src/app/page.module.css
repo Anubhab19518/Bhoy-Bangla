@@ -636,6 +636,31 @@
   color: #666;
 }
 
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+  padding: 16px 20px;
+  color: white;
+  font-family: var(--font-main);
+  outline: none;
+  font-size: 0.95rem;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  border-color: rgba(144, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+  color: #666;
+}
+
 .formFooter {
   display: flex;
   justify-content: space-between;
@@ -1603,4 +1628,79 @@
   font-size: 0.8rem;
   margin: 0;
   line-height: 1.2;
+}
+
+/* Comprehensive Mobile Fixes */
+@media (max-width: 900px) {
+  /* Fix Header: hide nav links to prevent vertical wrap and overlap */
+  .nav {
+    display: none;
+  }
+  .header {
+    grid-template-columns: 1fr auto;
+    padding: 15px 20px;
+  }
+  .headerScrolled {
+    padding: 10px 20px;
+  }
+
+  /* Fix GSAP Course Section Text Size */
+  .sportsTitle {
+    font-size: 1.6rem !important;
+  }
+  .sportsLeftCol {
+    border-radius: 12px;
+  }
+  .sportsTextItem {
+    padding: 0 15px;
+  }
+  .sportsMonth {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+  }
+  
+  /* Fix Mobile Footer Layout */
+  .footerWrapper {
+    padding: 30px 15px;
+  }
+  .footerCard {
+    padding: 30px 20px;
+    border-radius: 16px;
+    overflow: hidden; /* Ensure nothing overflows the card */
+  }
+  .footerTop {
+    gap: 30px;
+    text-align: center;
+    align-items: center;
+  }
+  .footerBrand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .footerLogoContainer {
+    flex-direction: column; /* Stack logo and text */
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .footerLogoImg {
+    object-fit: contain;
+  }
+  .socialIcons {
+    justify-content: center;
+    margin-top: 10px;
+  }
+  .footerLinksGrid {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    width: 100%;
+  }
+  .footerLinkCol {
+    align-items: center;
+    gap: 10px;
+  }
 }

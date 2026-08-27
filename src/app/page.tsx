@@ -11,7 +11,7 @@ import FooterSection from "@/components/FooterSection";
 // Helper to fetch latest video from YouTube
 async function getLatestVideos() {
   const apiKey = process.env.YOUTUBE_API_KEY;
-  let channelId = process.env.YOUTUBE_CHANNEL_ID || "UCExX4SwPx78Z5vpYRTMjffQ";
+  const channelId = "UCExX4SwPx78Z5vpYRTMjffQ";
   
   // Convert UC to UU for the Uploads Playlist
   const uploadsPlaylistId = channelId.replace(/^UC/, "UU");
@@ -41,6 +41,7 @@ async function getLatestVideos() {
 
     const data = await res.json();
     if (data.items && data.items.length > 0) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       return data.items.map((item: any) => ({
         title: item.snippet.title,
         description: item.snippet.description,

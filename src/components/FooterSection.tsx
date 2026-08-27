@@ -40,11 +40,6 @@ export default function FooterSection() {
               <a href="#latest">Videos</a>
               <a href="#academy">Academy</a>
             </div>
-            <div className={styles.footerLinkCol}>
-              <h4>Legal</h4>
-              <a href="#">Privacy Policy</a>
-              <a href="#">Terms of Service</a>
-            </div>
           </div>
         </div>
         

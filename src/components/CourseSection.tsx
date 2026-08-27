@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styles from "@/app/page.module.css";
 import ScrollReveal from "./ScrollReveal";
 import StickyRoadmap from "./StickyRoadmap";
