@@ -3,6 +3,8 @@ import FooterReveal from "@/components/FooterReveal";
 import HeroSection from "@/components/HeroSection";
 import StreamingSection from "@/components/StreamingSection";
 import AcademySection from "@/components/AcademySection";
+import CourseSection from "@/components/CourseSection";
+import FaqSection from "@/components/FaqSection";
 import HowWeDoSection from "@/components/HowWeDoSection";
 import FooterSection from "@/components/FooterSection";
 
@@ -64,7 +66,9 @@ export default async function Home() {
       <HeroSection />
       <StreamingSection videos={videos} />
       <HowWeDoSection />
+      <CourseSection />
       <AcademySection />
+      <FaqSection />
       </main>
       
       <FooterReveal>

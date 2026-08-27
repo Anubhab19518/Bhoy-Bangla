@@ -1176,3 +1176,431 @@
     width: 100%;
   }
 }
+
+/* Course Section */
+.courseHero {
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto 120px;
+}
+
+.courseTitle {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.courseTitle span {
+  color: var(--primary-color);
+}
+
+.courseTagline {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+.courseBadges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.courseBadge {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  backdrop-filter: blur(5px);
+}
+
+.courseMainCol {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.courseBottomGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto 60px;
+}
+
+@media (min-width: 900px) {
+  .courseBottomGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.sectionSubTitle {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.sectionSubTitle span {
+  color: var(--primary-color);
+}
+
+/* Timeline */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  position: relative;
+  padding-left: 30px;
+  border-left: 2px solid rgba(144, 0, 0, 0.3);
+}
+
+.timelineItem {
+  position: relative;
+}
+
+.timelineItem::before {
+  content: "";
+  position: absolute;
+  left: -37px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  box-shadow: 0 0 10px var(--primary-color);
+}
+
+.timelineMonth {
+  font-size: 0.9rem;
+  color: var(--primary-color);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.timelineContent h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.timelineContent p {
+  color: #aaa;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Course Sidebar */
+.courseSideCol {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.courseCard {
+  background: rgba(18, 18, 18, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.courseCard h4 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skillsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skillsGrid span {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.highlightSkill {
+  background: rgba(144, 0, 0, 0.2) !important;
+  color: #ffcccc;
+  border: 1px solid rgba(144, 0, 0, 0.5);
+}
+
+.softwareGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.softwareItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.softwareItem strong {
+  font-size: 0.95rem;
+}
+
+.softwareItem span {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.careerList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.careerList li {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: #ddd;
+  position: relative;
+  padding-left: 20px;
+}
+
+.careerList li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+}
+
+/* FAQ Accordion */
+.courseFaqSection {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faqContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.faqItem {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.faqItem:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.faqOpen {
+  border-color: rgba(144, 0, 0, 0.3);
+  background: rgba(144, 0, 0, 0.05);
+}
+
+.faqQuestionRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.faqQuestion {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.faqIcon {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--primary-color);
+}
+
+.faqAnswer {
+  padding: 0 20px 20px;
+  color: #bbb;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* GSAP Sports Sticky Scroll */
+.sportsStickyContainer {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.sportsStickyGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  height: 80vh;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 900px) {
+  .sportsStickyGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+.sportsLeftCol {
+  position: relative;
+  background: rgba(18, 18, 18, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  height: 100%;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.fadeMaskTop, .fadeMaskBottom {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.fadeMaskTop {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(18,18,18,1) 10%, transparent);
+}
+
+.fadeMaskBottom {
+  bottom: 0;
+  background: linear-gradient(to top, rgba(18,18,18,1) 10%, transparent);
+}
+
+.sportsTextItem {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 0 40px;
+  opacity: 0.15;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
+  cursor: pointer;
+  z-index: 5;
+  color: white;
+}
+
+.sportsTextItem:hover {
+  opacity: 0.3;
+}
+
+.sportsTextActive {
+  opacity: 1 !important;
+}
+
+.sportsMonth {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  margin-bottom: 8px;
+}
+
+.sportsTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1.2;
+}
+
+.sportsRightCol {
+  position: relative;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.sportsImageContainer {
+  position: absolute;
+  inset: 0;
+  background: #000;
+}
+
+.sportsImageLayer {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.05);
+  pointer-events: none;
+  transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
+}
+
+.sportsImageLayerActive {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 10;
+}
+
+.sportsImageCaptionPill {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  background: rgba(12, 12, 12, 0.8);
+  backdrop-filter: blur(12px);
+  padding: 16px 24px;
+  border-radius: 30px;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.sportsImageCaptionPill h4 {
+  font-size: 1.05rem;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.sportsImageCaptionPill p {
+  font-size: 0.85rem;
+  color: #ccc;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.sportsMobileImageOverlay {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 160px;
+  height: 210px;
+  border-radius: 12px;
+  overflow: hidden;
+  z-index: 20;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  border: 2px solid rgba(255,255,255,0.1);
+}
+
+.sportsMobileCaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+  color: white;
+}
+
+.sportsMobileCaption h4 {
+  font-size: 0.8rem;
+  margin: 0;
+  line-height: 1.2;
+}
