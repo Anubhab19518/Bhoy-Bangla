@@ -1,0 +1,160 @@
+.processPageWrapper {
+  min-height: 100vh;
+  background-color: #000;
+  color: white;
+  position: relative;
+}
+
+.heroSection {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.heroImage {
+  object-fit: cover;
+  opacity: 0.6; /* Increased opacity to make photo more visible */
+  z-index: 0;
+  transition: transform 10s ease;
+}
+
+.heroSection:hover .heroImage {
+  transform: scale(1.05);
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.85) 100%);
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.stepNumber {
+  font-family: var(--font-montserrat);
+  font-size: 1.2rem;
+  letter-spacing: 8px;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.processTitle {
+  font-family: var(--font-hero);
+  font-size: 5.5rem;
+  line-height: 1;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.9);
+  margin-bottom: 20px;
+}
+
+.processSubtitle {
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: 300;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+.processDescription {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ccc;
+  max-width: 700px;
+  margin: 0 auto;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
+
+.backLink {
+  position: absolute;
+  top: 100px;
+  left: 5%;
+  z-index: 999; /* Ensure it is above the header and everything else */
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #aaa;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+  background: rgba(0,0,0,0.5);
+  padding: 8px 16px;
+  border-radius: 30px;
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+
+.backLink:hover {
+  color: white;
+  border-color: rgba(255,255,255,0.3);
+}
+
+.nextStepContainer {
+  position: absolute;
+  bottom: 50px;
+  right: 5%;
+  z-index: 10;
+}
+
+.nextStepLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  background: rgba(20, 20, 20, 0.8);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 10px 22px;
+  border-radius: 40px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+
+.nextStepLink:hover {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  transform: translateX(-5px);
+}
+
+.nextStepTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .processTitle {
+    font-size: 3.5rem;
+  }
+  .processSubtitle {
+    font-size: 1.4rem;
+  }
+  .processDescription {
+    font-size: 1.1rem;
+  }
+  .backLink {
+    top: 80px;
+  }
+  .nextStepContainer {
+    bottom: 20px;
+    right: 5%;
+    left: 5%;
+  }
+  .nextStepLink {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

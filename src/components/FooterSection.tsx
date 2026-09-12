@@ -3,7 +3,7 @@ import styles from "@/app/page.module.css";
 
 export default function FooterSection() {
   return (
-    <footer id="contact" className={styles.footerWrapper}>
+    <footer className={styles.footerWrapper}>
       <div className={styles.footerCard}>
         <div className={styles.footerTop}>
           <div className={styles.footerBrand}>
@@ -31,8 +31,8 @@ export default function FooterSection() {
           <div className={styles.footerLinksGrid}>
             <div className={styles.footerLinkCol}>
               <h4>Contact</h4>
-              <a href="#">8697983906</a>
-              <a href="#">bhoybangla@gmail.com</a>
+              <a href="tel:+918697983906">8697983906</a>
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=bhoybangla@gmail.com" target="_blank" rel="noreferrer">bhoybangla@gmail.com</a>
             </div>
             <div className={styles.footerLinkCol}>
               <h4>Explore</h4>

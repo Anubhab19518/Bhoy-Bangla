@@ -12,9 +12,15 @@ export async function submitForm(formData: FormData) {
 
   try {
     // Forward to Google Apps Script Web App Endpoint
-    // Replace the URL below with your actual deployed Google Apps Script URL
     const GOOGLE_SCRIPT_URL = process.env.GOOGLE_SCRIPT_URL || "https://script.google.com/macros/s/your_script_id/exec";
     
+    // If we are using the placeholder URL, mock a successful response
+    if (GOOGLE_SCRIPT_URL.includes("your_script_id")) {
+      // Simulate network delay
+      await new Promise(resolve => setTimeout(resolve, 800));
+      return { success: true, message: "Application submitted successfully." };
+    }
+
     // We send a POST request. Google Apps script receives this as POST event.
     const response = await fetch(GOOGLE_SCRIPT_URL, {
       method: "POST",

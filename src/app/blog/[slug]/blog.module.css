@@ -1,0 +1,134 @@
+.heroSection {
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.heroImage {
+  object-fit: cover;
+  opacity: 0.5;
+  z-index: 0;
+  transition: transform 10s ease;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, var(--background) 100%);
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 0 20px;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.blogCategory {
+  font-family: var(--font-montserrat);
+  font-size: 1.2rem;
+  letter-spacing: 4px;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.blogTitle {
+  font-family: var(--font-hero);
+  font-size: 5rem;
+  line-height: 1;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.9);
+  margin-bottom: 20px;
+}
+
+.blogMeta {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  color: #aaa;
+  font-size: 1rem;
+}
+
+.contentSection {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px 100px;
+  background: var(--background);
+}
+
+.markdown {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #ccc;
+}
+
+.markdown h2 {
+  font-family: var(--font-montserrat);
+  font-size: 2rem;
+  color: white;
+  margin: 60px 0 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.markdown p {
+  margin-bottom: 25px;
+}
+
+.markdown strong {
+  color: white;
+  font-weight: 600;
+}
+
+.markdown em {
+  color: var(--primary-color);
+  font-style: italic;
+}
+
+.backLink {
+  position: absolute;
+  top: 100px;
+  left: 5%;
+  z-index: 999;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #aaa;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+  background: rgba(0,0,0,0.5);
+  padding: 8px 16px;
+  border-radius: 30px;
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+
+.backLink:hover {
+  color: white;
+  border-color: rgba(255,255,255,0.3);
+}
+
+@media (max-width: 768px) {
+  .blogTitle {
+    font-size: 3rem;
+  }
+  .blogCategory {
+    font-size: 1rem;
+  }
+  .markdown {
+    font-size: 1.05rem;
+  }
+}

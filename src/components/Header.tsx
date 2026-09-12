@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "@/app/page.module.css";
 
 export default function Header() {
@@ -56,12 +57,13 @@ export default function Header() {
       </div>
       
       <nav className={styles.nav}>
-        <a href="#home">Home</a>
-        <a href="#latest">Videos</a>
-        <a href="#process">Process</a>
-        <a href="#course">Course</a>
-        <a href="#academy">Academy</a>
-        <a href="#contact">Contact</a>
+        <Link href="/#home">Home</Link>
+        <Link href="/#latest">Videos</Link>
+        <Link href="/#process">Process</Link>
+        <Link href="/#course">Course</Link>
+        <Link href="/#blog">Blog</Link>
+        <Link href="/#academy">Academy</Link>
+        <Link href="/#contact">Contact</Link>
       </nav>
       
       <div className={styles.headerSpacer}>

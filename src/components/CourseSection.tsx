@@ -2,14 +2,50 @@ import styles from "@/app/page.module.css";
 import ScrollReveal from "./ScrollReveal";
 import StickyRoadmap from "./StickyRoadmap";
 
-const roadmapItems = [
-  { month: "Month 1", title: "Animation Fundamentals & Creative Foundation", description: "Introduction to animation principles, timing, drawing basics, and character expressions.", image: "/month-1.webp" },
-  { month: "Month 2", title: "Character & Background Design", description: "Create original characters (heroes & villains), separate assets, and design cinematic backgrounds.", image: "/month-2.webp" },
-  { month: "Month 3", title: "Character Rigging & 2D Animation", description: "Master rig-based bone systems, character movement (walk cycles), and animation timing.", image: "/month-3.webp" },
-  { month: "Month 4", title: "Advanced Animation & Lip Sync", description: "Facial animation, emotional acting, camera movements, and Bengali lip-sync synchronization.", image: "/month-4.webp" },
-  { month: "Month 5", title: "VFX, Compositing & Horror Production", description: "Create cinematic effects (fire, smoke, fog), horror atmospheres, sci-fi elements, and advanced compositing.", image: "/month-5.webp" },
-  { month: "Month 6", title: "Complete Episode Production", description: "Scripting, storyboarding, full production, sound design, video editing, and YouTube publishing.", image: "/month-6.webp" }
-];
+  const roadmapItems = [
+    {
+      slug: "month-1",
+      month: "Month 01",
+      title: "Fundamentals & Creative Foundation",
+      description: "Dive into animation history, principles, drawing techniques, and storyboard creation.",
+      image: "/month-1.webp",
+    },
+    {
+      slug: "month-2",
+      month: "Month 02",
+      title: "Character & Background Design",
+      description: "Master the art of creating memorable characters and immersive Bengali landscapes.",
+      image: "/month-2.webp",
+    },
+    {
+      slug: "month-3",
+      month: "Month 03",
+      title: "Rigging & 2D Movement",
+      description: "Build robust character rigs and learn the mechanics of fluid character animation.",
+      image: "/month-3.webp",
+    },
+    {
+      slug: "month-4",
+      month: "Month 04",
+      title: "Advanced Animation & Lip Sync",
+      description: "Bring characters to life with facial expressions, acting, and Bengali lip-syncing.",
+      image: "/month-4.webp",
+    },
+    {
+      slug: "month-5",
+      month: "Month 05",
+      title: "VFX & Horror Compositing",
+      description: "Add spine-chilling visual effects, dynamic lighting, and cinematic atmosphere.",
+      image: "/month-5.webp",
+    },
+    {
+      slug: "month-6",
+      month: "Month 06",
+      title: "Final Episode Production",
+      description: "Write, direct, and animate your very own horror episode from start to finish.",
+      image: "/month-6.webp",
+    },
+  ];
 
 export default function CourseSection() {
   return (

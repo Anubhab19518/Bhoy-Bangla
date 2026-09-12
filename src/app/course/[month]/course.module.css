@@ -1,0 +1,178 @@
+.coursePageWrapper {
+  min-height: 100vh;
+  background-color: var(--background);
+  color: white;
+  padding-bottom: 100px;
+}
+
+.heroSection {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.heroImage {
+  object-fit: cover;
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(5,5,5,0.2) 0%, rgba(5,5,5,1) 100%);
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.monthLabel {
+  font-family: var(--font-montserrat);
+  font-size: 1.2rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.courseTitle {
+  font-family: var(--font-hero);
+  font-size: 4rem;
+  line-height: 1.1;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.9);
+  margin-bottom: 20px;
+}
+
+.courseDesc {
+  font-size: 1.2rem;
+  color: #ccc;
+  font-weight: 300;
+}
+
+.contentContainer {
+  max-width: 1200px;
+  margin: -50px auto 0;
+  padding: 0 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.modulesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.moduleCard {
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.moduleCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  border-color: rgba(144, 0, 0, 0.3);
+}
+
+.moduleTitle {
+  font-size: 1.4rem;
+  color: white;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  font-weight: 600;
+}
+
+.topicList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.topicItem {
+  color: #aaa;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.topicIcon {
+  color: var(--primary-color);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.projectCard {
+  background: linear-gradient(135deg, rgba(144,0,0,0.1) 0%, rgba(20,20,20,0.8) 100%);
+  border: 1px solid rgba(144, 0, 0, 0.3);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  margin-bottom: 60px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+.projectTitle {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.projectDesc {
+  font-size: 1.2rem;
+  color: white;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #aaa;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+  margin-bottom: 40px;
+}
+
+.backLink:hover {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .courseTitle {
+    font-size: 2.5rem;
+  }
+  .modulesGrid {
+    grid-template-columns: 1fr;
+  }
+  .projectCard {
+    padding: 30px 20px;
+  }
+}

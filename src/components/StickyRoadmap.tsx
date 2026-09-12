@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "@/app/page.module.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -12,6 +13,7 @@ if (typeof window !== "undefined") {
 }
 
 export interface RoadmapItem {
+  slug: string;
   month: string;
   title: string;
   description: string;
@@ -65,7 +67,7 @@ export default function StickyRoadmap({ items }: StickyRoadmapProps) {
 
             {items.map((item, index) => {
               const isActive = index === activeIndex;
-              const yOffset = (index - activeIndex) * 140; // Spacing between titles
+              const yOffset = (index - activeIndex) * 220; // Spacing between titles
               const focalPoint = isMobile ? "20%" : "50%";
               
               return (
@@ -76,6 +78,9 @@ export default function StickyRoadmap({ items }: StickyRoadmapProps) {
                 >
                   <div className={styles.sportsMonth}>{item.month}</div>
                   <h4 className={styles.sportsTitle}>{item.title}</h4>
+                  <Link href={`/course/${item.slug}`} className={styles.syllabusBtn}>
+                    View Full Syllabus <span className={styles.syllabusArrow}>→</span>
+                  </Link>
                 </div>
               );
             })}
