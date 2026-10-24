@@ -57,6 +57,7 @@ export default function FooterSection() {
               <h4>Explore</h4>
               <a href="#home">Home</a>
               <a href="#latest">Videos</a>
+              <a href="#characters">Characters</a>
               <a href="#academy">Academy</a>
             </div>
           </div>

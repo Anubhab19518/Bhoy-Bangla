@@ -1284,6 +1284,7 @@
     font-size: 1.2rem;
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     margin-bottom: 5px;
@@ -1899,3 +1900,716 @@
     gap: 10px;
   }
 }
+
+/* ===================================================
+   OUR CHARACTERS BENTO GRID SECTION
+   =================================================== */
+
+.charactersSection {
+  padding: 120px 20px 100px;
+  position: relative;
+  background: radial-gradient(circle at 50% 10%, rgba(144, 0, 0, 0.12) 0%, rgba(5, 5, 5, 0.98) 70%);
+  overflow: hidden;
+}
+
+.charactersSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(144, 0, 0, 0.5), transparent);
+}
+
+.charactersHeaderContainer {
+  max-width: 800px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.charactersSubtitle {
+  font-size: 1.15rem;
+  color: #a3a3a3;
+  margin-top: -40px;
+  margin-bottom: 35px;
+  line-height: 1.6;
+}
+
+/* Category Filter Bar */
+.charactersFilterBar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.filterBtn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #bbb;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(8px);
+}
+
+.filterBtn:hover {
+  background: rgba(144, 0, 0, 0.2);
+  border-color: rgba(144, 0, 0, 0.4);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.filterBtnActive {
+  background: var(--primary-color) !important;
+  border-color: var(--accent-color) !important;
+  color: #fff !important;
+  box-shadow: 0 0 20px rgba(144, 0, 0, 0.5);
+}
+
+.charactersSection .sectionTitle span {
+  background: linear-gradient(135deg, #ff4444 0%, #cc0000 60%, #900000 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 20px rgba(239, 68, 68, 0.5));
+}
+
+/* Bento Grid */
+.charactersBentoGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 290px;
+  gap: 20px;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+/* Card Spans */
+.bentoHero {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.bentoWide {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+.bentoStandard {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+/* Individual Bento Card */
+.characterCard {
+  position: relative;
+  background: rgba(14, 14, 17, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  cursor: pointer;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              border-color 0.35s ease, 
+              box-shadow 0.35s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.characterCard:hover {
+  transform: translateY(-6px);
+  border-color: rgba(220, 38, 38, 0.6);
+  box-shadow: 0 20px 45px rgba(144, 0, 0, 0.3), 
+              inset 0 0 25px rgba(144, 0, 0, 0.12);
+}
+
+/* Dynamic glow spotlight behind character */
+.characterSpotlight {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 280px;
+  height: 280px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  opacity: 0.18;
+  filter: blur(65px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.characterCard:hover .characterSpotlight {
+  opacity: 0.4;
+  transform: translate(-50%, -50%) scale(1.15);
+}
+
+/* Character Graphic Container */
+.characterFigureWrapper {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.bentoHero .characterFigureWrapper {
+  right: 15px;
+  left: auto;
+  width: 58%;
+  height: 100%;
+  justify-content: center;
+  align-items: flex-end;
+  padding-top: 25px;
+  padding-bottom: 15px;
+}
+
+.bentoWide .characterFigureWrapper {
+  right: 15px;
+  left: auto;
+  width: 46%;
+  height: 100%;
+  justify-content: center;
+  align-items: flex-end;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.bentoStandard .characterFigureWrapper {
+  right: 5px;
+  left: auto;
+  width: 48%;
+  height: 88%;
+  bottom: 0;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.characterImg {
+  max-height: 94%;
+  width: auto;
+  max-width: 95%;
+  object-fit: contain;
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.45s ease;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.85));
+}
+
+.characterCard:hover .characterImg {
+  transform: scale(1.06) translateY(-4px);
+  filter: drop-shadow(0 20px 30px rgba(144, 0, 0, 0.5));
+}
+
+/* Card Information Layer */
+.characterContentLayer {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+  pointer-events: none;
+}
+
+.characterTextGroup {
+  position: relative;
+  width: 100%;
+}
+
+.bentoHero .characterTextGroup {
+  max-width: 50%;
+  background: rgba(10, 10, 13, 0.88);
+  padding: 20px 22px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.bentoWide .characterTextGroup {
+  max-width: 58%;
+  background: linear-gradient(90deg, rgba(12, 12, 16, 0.94) 0%, rgba(12, 12, 16, 0.85) 75%, transparent 100%);
+  padding: 16px 18px 12px 14px;
+  margin-left: -10px;
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.bentoStandard .characterTextGroup {
+  max-width: 62%;
+  background: linear-gradient(90deg, rgba(12, 12, 16, 0.94) 0%, rgba(12, 12, 16, 0.85) 75%, transparent 100%);
+  padding: 16px 16px 12px 14px;
+  margin-left: -10px;
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.characterName {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.25;
+  margin-bottom: 4px;
+  letter-spacing: 0.2px;
+}
+
+.bentoHero .characterName {
+  font-size: 1.95rem;
+  line-height: 1.2;
+}
+
+.bentoWide .characterName {
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+
+.bentoStandard .characterName {
+  font-size: 1.15rem;
+  line-height: 1.25;
+}
+
+.characterRole {
+  font-size: 0.85rem;
+  color: #a8a8a8;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.characterDesc {
+  font-size: 0.82rem;
+  color: #888;
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.bentoHero .characterDesc {
+  font-size: 0.95rem;
+  color: #bbb;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}
+
+/* Card Bottom Action */
+.characterCardFooter {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding-top: 10px;
+  margin-top: 4px;
+  width: 100%;
+}
+
+.inspectPrompt {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #e5e5e5;
+  white-space: nowrap; /* Prevents text overflow / line breaking */
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+
+.inspectPrompt svg {
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.characterCard:hover .inspectPrompt {
+  color: var(--accent-color);
+}
+
+.characterCard:hover .inspectPrompt svg {
+  transform: translateX(4px);
+}
+
+/* ===================================================
+   CHARACTER DETAIL MODAL
+   =================================================== */
+
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+  animation: modalFadeIn 0.3s ease-out forwards;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modalWindow {
+  position: relative;
+  background: #0d0d11;
+  border: 1px solid rgba(144, 0, 0, 0.45);
+  border-radius: 20px;
+  max-width: 740px;
+  width: 100%;
+  max-height: min(480px, 78vh);
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.95), 0 0 50px rgba(144, 0, 0, 0.25);
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  margin: auto;
+  animation: modalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes modalSlideUp {
+  from { transform: translateY(20px) scale(0.98); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.modalCloseBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.modalCloseBtn:hover {
+  background: var(--primary-color);
+  border-color: var(--accent-color);
+  transform: rotate(90deg);
+}
+
+.modalImageCol {
+  position: relative;
+  background: radial-gradient(circle at center, rgba(144, 0, 0, 0.22) 0%, rgba(8, 8, 10, 0.98) 75%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  height: 100%;
+  overflow: hidden;
+}
+
+.modalImg {
+  max-height: 350px;
+  max-width: 90%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.95));
+}
+
+.modalContentCol {
+  padding: 24px 26px 20px 16px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  max-height: min(480px, 78vh);
+}
+
+.modalContentCol::-webkit-scrollbar {
+  width: 5px;
+}
+
+.modalContentCol::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 3px;
+}
+
+.modalContentCol::-webkit-scrollbar-thumb {
+  background: rgba(144, 0, 0, 0.4);
+  border-radius: 3px;
+}
+
+.modalContentCol::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
+
+.modalTitle {
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 3px;
+}
+
+.modalRole {
+  font-size: 0.85rem;
+  color: #a8a8a8;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+.modalDangerRow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.modalDangerBadge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 6px;
+}
+
+.dangerLethal, .dangerExtreme {
+  color: #ff4d4d;
+  background: rgba(220, 38, 38, 0.2);
+  border: 1px solid rgba(220, 38, 38, 0.4);
+}
+
+.dangerHigh {
+  color: #fb923c;
+  background: rgba(249, 115, 22, 0.2);
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.dangerMedium {
+  color: #facc15;
+  background: rgba(234, 179, 8, 0.2);
+  border: 1px solid rgba(234, 179, 8, 0.4);
+}
+
+.dangerLow {
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.2);
+  border: 1px solid rgba(74, 222, 128, 0.4);
+}
+
+.modalLoreBox {
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 3px solid var(--primary-color);
+  padding: 10px 14px;
+  border-radius: 0 10px 10px 0;
+  margin-bottom: 14px;
+}
+
+.modalLoreBox h4 {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #ff5555;
+  margin-bottom: 4px;
+}
+
+.modalLoreBox p {
+  font-size: 0.82rem;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+.modalMetaGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-top: auto;
+}
+
+.modalMetaItem {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+
+.modalMetaLabel {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #888;
+  margin-bottom: 2px;
+}
+
+.modalMetaValue {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #eee;
+}
+
+/* ===================================================
+   RESPONSIVE MEDIA QUERIES FOR OUR CHARACTERS
+   =================================================== */
+
+@media (max-width: 1100px) {
+  .charactersBentoGrid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 290px;
+    gap: 16px;
+  }
+
+  .bentoHero {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .bentoWide {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .bentoStandard {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .modalWindow {
+    grid-template-columns: 280px 1fr;
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 768px) {
+  .charactersSection {
+    padding: 70px 16px 50px;
+  }
+
+  .charactersHeaderContainer {
+    margin-bottom: 30px;
+  }
+
+  .charactersSubtitle {
+    font-size: 0.95rem;
+    margin-top: -25px;
+    margin-bottom: 25px;
+  }
+
+  .charactersFilterBar {
+    gap: 8px;
+    margin-bottom: 30px;
+  }
+
+  .filterBtn {
+    padding: 6px 14px;
+    font-size: 0.8rem;
+  }
+
+  .charactersBentoGrid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    gap: 16px;
+  }
+
+  .bentoHero, 
+  .bentoWide, 
+  .bentoStandard {
+    grid-column: span 1;
+    grid-row: span 1;
+    min-height: 290px;
+  }
+
+  .bentoHero .characterFigureWrapper,
+  .bentoWide .characterFigureWrapper,
+  .bentoStandard .characterFigureWrapper {
+    width: 48%;
+    right: 10px;
+    height: 90%;
+  }
+
+  .bentoHero .characterTextGroup,
+  .bentoWide .characterTextGroup,
+  .bentoStandard .characterTextGroup {
+    max-width: 62%;
+    padding: 14px 14px 10px 10px;
+    margin-left: -8px;
+    border-radius: 10px;
+  }
+
+  .bentoHero .characterName {
+    font-size: 1.45rem;
+  }
+
+  .characterName {
+    font-size: 1.12rem;
+  }
+
+  .characterRole {
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+  }
+
+  .characterDesc {
+    font-size: 0.78rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+
+  /* Modal on Mobile */
+  .modalBackdrop {
+    padding: 12px;
+  }
+
+  .modalWindow {
+    grid-template-columns: 1fr;
+    max-height: 82vh;
+    border-radius: 18px;
+    max-width: 95vw;
+  }
+
+  .modalImageCol {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 14px 10px;
+    height: 160px;
+    min-height: 160px;
+  }
+
+  .modalImg {
+    max-height: 135px;
+  }
+
+  .modalContentCol {
+    padding: 16px 14px;
+    max-height: calc(82vh - 160px);
+  }
+
+  .modalTitle {
+    font-size: 1.3rem;
+  }
+
+  .modalMetaGrid {
+    grid-template-columns: 1fr;
+  }
+}
+

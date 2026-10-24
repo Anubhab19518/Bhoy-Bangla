@@ -7,6 +7,7 @@ import CourseSection from "@/components/CourseSection";
 import BlogSection from "@/components/BlogSection";
 import FaqSection from "@/components/FaqSection";
 import HowWeDoSection from "@/components/HowWeDoSection";
+import CharactersSection from "@/components/CharactersSection";
 import FooterSection from "@/components/FooterSection";
 
 // Helper to fetch latest video from YouTube
@@ -67,6 +68,7 @@ export default async function Home() {
 
       <HeroSection />
       <StreamingSection videos={videos} />
+      <CharactersSection />
       <HowWeDoSection />
       <CourseSection />
       <BlogSection />
