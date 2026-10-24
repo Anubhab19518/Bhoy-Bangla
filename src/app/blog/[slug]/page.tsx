@@ -36,8 +36,8 @@ function renderMarkdown(content: string) {
   });
 }
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  // In Next.js 15, params is a Promise, so we must await it to get the slug.
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  // In Next.js 15+, params is a Promise, so we must await it to get the slug.
   const resolvedParams = await params;
   
   const post: BlogPost | undefined = blogData.find(
